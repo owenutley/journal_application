@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="full">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal Entries</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Journal Entries</h1>
-
-    <form>
+<body id="body">
+    <h1 id="title" >Journal Entries</h1>
+    <section id="main">
+    <form id="entryForm">
         <input placeholder="title" id="title"/>
-        <input placeholder="text" id="text"/>
+        <br>
+        <textarea placeholder="text" id="text"></textarea>
+        <br>
         <input placeholder="rating" id="rating"/>
-        <button>Add Entry</button>
+        <button id="add" >Add Entry</button>
     </form>
-
+    </section>
+    <div class="vertical-center">
+    <button id="get_all">Show All Entries</button>
+    </div>
     <section id="entry_container"></section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

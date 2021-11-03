@@ -2,7 +2,7 @@
     {
         "title": "Journal Entry example",
         "text": "This happened today",
-        "rating": 4,
+        "rating": "4",
         "id": 1
     }
 ]

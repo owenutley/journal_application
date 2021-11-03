@@ -8,9 +8,9 @@ app.use(cors())
 
 const {addEntry, getEntries} = require('./entry_ctrl')
 
-app.get(`/entry`, getEntries)
-app.post('/entry', addEntry)
+app.get(`/api/entry`, getEntries)
+app.post('/api/entry', addEntry)
 
-const port = process.env.PORT || 4765
+const port = 5503
 
 app.listen(port, console.log(`Running on ${port}`))
