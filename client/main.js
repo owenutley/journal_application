@@ -8,6 +8,7 @@ const errCallback = err => console.log(err)
 
 const getAllEntries = () => axios.get(baseURL).then(entriesCallback).catch(errCallback)
 const addEntry = body => axios.post(baseURL, body).then(entriesCallback).catch(errCallback)
+const deleteHouse = id => axios.delete(`${baseURL}/${id}`).then(entriesCallback).catch(errCallback)
 
 function submitHandler(event) {
     event.preventDefault()
@@ -35,7 +36,8 @@ function createEntry(body) {
 
     entry.innerHTML = `<h2>${body.title}</h2>
     <p>${body.text}</p>
-    <h3>${body.rating}</h3>`
+    <h3>${body.rating}</h3>
+    <button onclick="deleteEntry(${entry.id})">delete</button>`
 
 
     entry_container.appendChild(entry)

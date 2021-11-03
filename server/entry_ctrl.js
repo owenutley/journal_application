@@ -15,5 +15,10 @@ module.exports = {
         entries.push(newEntry)
         res.status(200).send(entries)
         globalId++
+    },
+    deleteEntry: (req, res) => {
+        let index = entries.findIndex(elem = elem.id === +req.params.id)
+        entries.splice(index, 1)
+        res.status(200).send(entries)
     }
 }
