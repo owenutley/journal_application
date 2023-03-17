@@ -1,14 +1,14 @@
 const entry_container = document.getElementById("entry_container")
 const entryForm = document.querySelector('form')
 
-const baseURL = `http://localhost:5503/api/entry`
+const baseURL = `http://localhost:5500/api/entry`
 
 const entriesCallback = ({ data: entries }) => displayEntries(entries)
 const errCallback = err => console.log(err)
 
 const getAllEntries = () => axios.get(baseURL).then(entriesCallback).catch(errCallback)
 const addEntry = body => axios.post(baseURL, body).then(entriesCallback).catch(errCallback)
-const deleteHouse = id => axios.delete(`${baseURL}/${id}`).then(entriesCallback).catch(errCallback)
+const deleteEntry = id => axios.delete(`${baseURL}/${id}`).then(entriesCallback).catch(errCallback)
 
 function submitHandler(event) {
     event.preventDefault()
@@ -20,7 +20,7 @@ function submitHandler(event) {
     let bodyObj = {
         title: title.value,
         text: text.value, 
-        rating: rating.value
+        rating: rating.value,
     }
 
     addEntry(bodyObj)
@@ -31,13 +31,16 @@ function submitHandler(event) {
 }
 
 function createEntry(body) {
-    const entry= document.createElement('div')
+    const entry = document.createElement('div')
     entry.classList.add('journal_entry')
-
-    entry.innerHTML = `<h2>${body.title}</h2>
-    <p>${body.text}</p>
-    <h3>${body.rating}</h3>
-    <button onclick="deleteEntry(${entry.id})">delete</button>`
+    console.log(body)
+    entry.innerHTML = `
+    <div  class="input" id="split_content>
+    <h2 class="text_align">${body.title}</h2>
+    <p class="text_align">${body.text}</p>
+    <h3 class="text_align">${body.rating}</h3>
+    <button class="btn" onclick="deleteEntry(${body.id})">delete</button>
+    <div>`
 
 
     entry_container.appendChild(entry)
@@ -49,41 +52,8 @@ function displayEntries(arr) {
         createEntry(arr[i])
     }
 }
-
-// function addAnEntry(event){
-//     console.log(event)
-//     event.preventDefault()
-
-//     let body = {
-//         title: title.value,
-//         text: text.value,
-//         rating: rating.value
-//     }
-
-//     const newEntry = document.createElement("div")
-//     newEntry.classList.add('event')
-
-//     newEntry.innerHTML = `<h2>${body.title}</h2>
-//     <p>${body.text}</p>
-//     <h3>${body.rating}</h3>`
-
-//     const title = document.getElementById('title')
-//     const text = document.getElementById('text')
-//     const rating = document.getElementById('rating')
-
-
-
-//     axios.post('http://localhost:4765/entry', body)
-//         .then(res => {
-//             console.log(res.data)
-//         })
-//         .catch(err => console.log(err))
-
-//     // newEntry.innerText = `${this.title.value}`
-//     // document.section.appendChild(newEntry)
-    
-// }
+const get_all = document.getElementById("get_all")
+get_all.addEventListener('click', getAllEntries)
 
 entryForm.addEventListener("submit", submitHandler)
 
-getAllEntries()

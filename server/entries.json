@@ -1,8 +1,20 @@
 [
     {
-        "title": "Journal Entry example",
-        "text": "This happened today",
-        "rating": "4",
+        "title": "This is where your title goes",
+        "text": "This is where the body of your text will appear",
+        "rating": "Here you will see your day's rating or short description",
         "id": 1
+    },
+    {
+        "title": "Thu. April 12, 2017",
+        "text": "I don’t remember eating from the kids menu when I was little. As well as I can remember I was always allowed to eat whatever I wanted. I do not consider myself a picky eater. I will literally eat any food in front of me. The only food I don’t like to eat are baked potatoes. I definitely think picky children can carry the habits they build when they are young all the way throughout their lives if they don’t try to change anything bout it.",
+        "rating": "Best Day Ever!",
+        "id": 2
+    },
+    {
+        "title": "Thu. April 13, 2017",
+        "text": "Today I spend most of my day not doing much. But I was able to go for a walk in the afternoon and it was just what I needed. I spent a few hours up and Secret Meadow park and it definitely was what I needed to get through the day. I also got the chance to talk with Kaity Lynn, it was so great to be able to catch up with her. She said that she is finally finishing up with school, which is fantastic as long as she doesn't decide to move far away.",
+        "rating": "Definitely a 5/10 day",
+        "id": 3
     }
 ]

@@ -12,6 +12,6 @@ app.get(`/api/entry`, getEntries)
 app.post('/api/entry', addEntry)
 app.delete("/api/entry/:id", deleteEntry)
 
-const port = 5503
+const port = 5500
 
 app.listen(port, console.log(`Running on ${port}`))
